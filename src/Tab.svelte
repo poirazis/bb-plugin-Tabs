@@ -1,8 +1,11 @@
 <script>
     import { getContext, onMount } from "svelte"
-    export let tab // object of type { id: number, name: text }
+    export let tab // object of type { id: number, name: text, icon: text }
+    export let iconSize
+    export let iconsOnly
     export let emphasized
     export let emphasizedColor = "var(--spectrum-global-color-indigo-600)"
+
     let isSelected
     let tabColor 
     let tabBox
@@ -24,7 +27,7 @@
         $tabStore.selectedTab = tab.id;
     }
 
-    $: updateBoundingBox ( $tabStore.selectedTab )
+    $: updateBoundingBox ( $tabStore.selectedTab, $tabStore.direction, $tabStore.size )
     $: if (isSelected) {
         tabColor = "var(--spectrum-global-color-gray-900)"
         if (emphasized) {
@@ -45,13 +48,21 @@
     class="spectrum-Tabs-item" tabindex="0"
     style="color: {tabColor};"
     >
-        <span class="spectrum-Tabs-itemLabel"> 
-            {tab.name} 
-        </span>
+        {#if tab.icon }
+            <i class="{tab.icon} {iconSize}"/>
+        {/if}
+        {#if !iconsOnly}
+            <span class="spectrum-Tabs-itemLabel"> {tab.name} </span>
+        {/if}
 </div>
 
 <style>
     .spectrum-Tabs-item {
+      display: flex;
+      flex-direction: row;
+      padding: 0px 4px;
       color: var(--spectrum-global-color-gray-600);
+      align-items: center;
+      gap: 8px;      
     }
 </style>

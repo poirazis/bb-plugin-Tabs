@@ -11,6 +11,28 @@
     "settings": [
       {
         "type": "select",
+        "label": "Direction",
+        "key": "direction",
+        "showInBar": true,
+        "barStyle": "buttons",
+        "options": [
+          {
+            "label": "Column",
+            "value": "horizontal",
+            "barIcon": "ViewColumn",
+            "barTitle": "Column layout"
+          },
+          {
+            "label": "Row",
+            "value": "vertical",
+            "barIcon": "ViewRow",
+            "barTitle": "Row layout"
+          }
+        ],
+        "defaultValue": "horizontal"
+      },
+      {
+        "type": "select",
         "label": "Size",
         "key": "size",
         "options": [
@@ -74,12 +96,9 @@
       },
       {
         "type": "boolean",
-        "label": "Vertical",
-        "key": "vertical",
-        "showInBar": true,
-        "barIcon": "VisibilityOff",
-        "barTitle": "Quiet variant",
-        "barSeparator": false
+        "label": "Icons Only",
+        "key": "iconsOnly",
+        "defaultValue": false
       }
     ]
   }
