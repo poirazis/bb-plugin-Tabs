@@ -1,0 +1,86 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "bb-plugin-Tabs",
+    "friendlyName": "Tabs",
+    "description": "A Tabs Compoenent for Budibase",
+    "icon": "Folder",
+    "hasChildren": true,
+    "styles": [ "padding", "background", "size", "border" ],
+    "settings": [
+      {
+        "type": "select",
+        "label": "Size",
+        "key": "size",
+        "options": [
+          {
+            "label": "Small",
+            "value": "S"
+          },
+          {
+            "label": "Medium",
+            "value": "M"
+          },
+          {
+            "label": "Large",
+            "value": "L"
+          },
+          {
+            "label": "Extra large",
+            "value": "XL"
+          }
+        ],
+        "defaultValue": "M"
+      },
+      {
+        "type": "boolean",
+        "label": "Centered",
+        "key": "centered",
+        "defaultValue": false,
+        "showInBar": true,
+        "barIcon": "VisibilityOff",
+        "barTitle": "Quiet variant",
+        "barSeparator": false
+      },
+      {
+        "type": "boolean",
+        "label": "Quiet",
+        "key": "quiet",
+        "showInBar": true,
+        "barIcon": "VisibilityOff",
+        "barTitle": "Quiet variant",
+        "barSeparator": false
+      },
+      {
+        "type": "boolean",
+        "label": "Compact",
+        "key": "compact",
+        "showInBar": true,
+        "barIcon": "VisibilityOff",
+        "barTitle": "Quiet variant",
+        "barSeparator": false
+      },
+      {
+        "type": "boolean",
+        "label": "Emphasized",
+        "key": "emphasized"
+      },
+      {
+        "type": "color",
+        "label": "Emphasized Color",
+        "key": "emphasizedColor",
+        "dependsOn": "emphasized"
+      },
+      {
+        "type": "boolean",
+        "label": "Vertical",
+        "key": "vertical",
+        "showInBar": true,
+        "barIcon": "VisibilityOff",
+        "barTitle": "Quiet variant",
+        "barSeparator": false
+      }
+    ]
+  }
+}
