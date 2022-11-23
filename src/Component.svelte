@@ -102,7 +102,7 @@
   onMount(() => setActiveTab())
 </script>
 
-<div use:styleable={$component.styles} class="container" class:vertical={direction === "vertical"} >
+<div use:styleable={$component.styles} class="outer_container" class:vertical={direction === "vertical"} >
   {#if ($tabStore.tabs.length > 0)}
   <div bind:this={container}
       class:spectrum-Tabs--quiet={quiet}
@@ -132,8 +132,13 @@
 
 
 <style>
-.vertical {
+.outer_container {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vertical {
   flex-direction: row;
 }
 .spectrum-Tabs--quiet {
@@ -147,7 +152,6 @@
   justify-content: var(--pos_justify);
 }
 .spectrum-Tabs-content {
-  margin-top: var(--spectrum-global-dimension-static-size-150);
   flex-grow: 1;
 }
 .spectrum-Tabs-selectionIndicator {
